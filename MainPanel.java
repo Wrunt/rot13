@@ -28,6 +28,7 @@ public class MainPanel extends JPanel {
         trans.setOpaque(true);
         trans.setForeground(color2);
         trans.setBorder(raisedetched);
+        trans.setEditable(false);
                 
         to = new JButton ("Cipher");
         to.setBackground(color2);
@@ -35,13 +36,16 @@ public class MainPanel extends JPanel {
         ButtonListenerA toLis = new ButtonListenerA();
         to.addActionListener(toLis);
         to.setAlignmentX(CENTER_ALIGNMENT);
+        JPanel button = new JPanel();
+        button.add(to);
+        button.setBackground(color1);
         
         JPanel control = new JPanel();
         BoxLayout layout = new BoxLayout(control, BoxLayout.Y_AXIS);
         control.setLayout(layout);
         control.add(Base);
         control.add(Box.createRigidArea(new Dimension(0,20)));
-        control.add(to);
+        control.add(button);
         control.add(Box.createRigidArea(new Dimension(0,20)));
         control.add(trans);
         control.setOpaque(true);
